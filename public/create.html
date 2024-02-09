@@ -17,7 +17,7 @@
       <div class="navbar">
         <img src="logo.png" alt="Digi Catalogue" class="logo" />
       </div>
-      <div><p class="heading">Create a new catalogue</p></div>
+      <div><p class="heading">Create a new product catalogue</p></div>
       <div class="upload">
         <label for="fileInput">Choose a file:</label>
         <input
@@ -27,400 +27,100 @@
           name="fileInput"
         />
       </div>
-      
+
       <div class="form">
-        <form class="entry-1"> 1.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
+        <form id="product-form">
+          <div>
+            <label for=" Name"> Name:&nbsp</label>
+            <input
+              type="text"
+              id=" Name"
+              name=" Name"
+              placeholder="Enter name"
+              required
+            />
 
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
+            <label for="brand">Brand:&nbsp</label>
+            <input
+              type="text"
+              id="brand"
+              name="brand"
+              placeholder="Enter brand"
+              required
+            />
 
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
+            <label for=" ID"> ID:&nbsp</label>
+            <input
+              type="text"
+              id=" ID"
+              name=" ID"
+              placeholder="Product ID"
+              required
+            />
 
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
+            <label for="upload-input" class="custom-upload-btn"
+              >Upload Image:&nbsp</label
+            ><input
+              type="file"
+              id="upload-input"
+              accept="image/*"
+              onchange="handleFileSelect(this)"
+            />
+          </div>
         </form>
-        
-      <div class="form">
-        <form class="entry-2">2.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
-
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
-
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
-
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
-        </form>
-        
-      <div class="form">
-        <form class="entry-3">3.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
-
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
-
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
-
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
-        </form>
-        
-      <div class="form">
-        <form class="entry-4">4.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
-
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
-
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
-
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
-        </form>
-        
-      <div class="form">
-        <form class="entry-5">5.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
-
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
-
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
-
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
-        </form>
-        
-      <div class="form">
-        <form class="entry-6">6.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
-
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
-
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
-
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
-        </form>
-        
-      <div class="form">
-        <form class="entry-7">7.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
-
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
-
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
-
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
-        </form>
-        
-      <div class="form">
-        <form class="entry-8">8.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
-
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
-
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
-
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
-        </form>
-        
-      <div class="form">
-        <form class="entry-9">9.&nbsp
-          <label for="productName">Product Name:&nbsp</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            placeholder="Enter product name"
-            required
-          />
-
-          <label for="brand">Brand:&nbsp</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            placeholder="Enter brand"
-            required
-          />
-
-          <label for="productID">Product ID:&nbsp</label>
-          <input
-            type="text"
-            id="productID"
-            name="productID"
-            placeholder="Enter product ID"
-            required
-          />
-
-          <label for="productCategory">Product Category:&nbsp</label>
-          <input
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            placeholder="Enter product category"
-            required
-          />
-        </form>
-        <div class="form">
-            <form class="entry-10">10.&nbsp
-              <label for="productName">Product Name:&nbsp</label>
-              <input
-                type="text"
-                id="productName"
-                name="productName"
-                placeholder="Enter product name"
-                required
-              />
-    
-              <label for="brand">Brand:&nbsp</label>
-              <input
-                type="text"
-                id="brand"
-                name="brand"
-                placeholder="Enter brand"
-                required
-              />
-    
-              <label for="productID">Product ID:&nbsp</label>
-              <input
-                type="text"
-                id="productID"
-                name="productID"
-                placeholder="Enter product ID"
-                required
-              />
-    
-              <label for="productCategory">Product Category:&nbsp</label>
-              <input
-                type="text"
-                id="productCategory"
-                name="productCategory"
-                placeholder="Enter product category"
-                required
-              />
-            </form>
-            <div class="button-container">
-                <button type="submit">Submit</button>
-                <button type="button">Add more rows</button>
-            </div>
+        <div class="button-container">
+          <button type="submit">Submit</button>
+          <button type="button" onclick="addRow()">Add more items</button>
+        </div>
       </div>
     </div>
+    <script>
+      // Function to add more rows to the form
+      function addRow() {
+        const form = document.getElementById("product-form");
+        const newRow = document.createElement("div");
+        newRow.className = "form";
+
+        newRow.innerHTML = `
+        <label for=" Name"> Name:&nbsp</label>
+            <input
+              type="text"
+              id=" Name"
+              name=" Name"
+              placeholder="Enter name"
+              required
+            />
+
+            <label for="brand">Brand:&nbsp</label>
+            <input
+              type="text"
+              id="brand"
+              name="brand"
+              placeholder="Enter brand"
+              required
+            />
+
+            <label for=" ID"> ID:&nbsp</label>
+            <input
+              type="text"
+              id=" ID"
+              name=" ID"
+              placeholder="Product ID"
+              required
+            />
+
+            <label for="upload-input" class="custom-upload-btn"
+              >Upload Image:&nbsp</label
+            ><input
+              type="file"
+              id="upload-input"
+              accept="image/*"
+              onchange="handleFileSelect(this)"
+            />`;
+
+        // Append the new row to the form
+        form.appendChild(newRow);
+      }
+    </script>
   </body>
 </html>
