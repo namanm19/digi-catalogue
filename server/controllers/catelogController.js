@@ -13,6 +13,18 @@ const getCatalog = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
+const getAllCatalogs = async (req, res) => {
+
+    try {
+        // Retrieve all catalogs from the database
+        const catalogs = await Catalog.find({});
+        // Send the catalogs as a JSON response
+        res.status(200).json(catalogs);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 
 const createCatalog = async (req, res) => {
     const { catalogName, products } = req.body;
@@ -40,5 +52,6 @@ const deleteCatalog = async (req, res) => {
 module.exports = {
     getCatalog,
     createCatalog,
-    deleteCatalog
+    deleteCatalog,
+    getAllCatalogs
 }

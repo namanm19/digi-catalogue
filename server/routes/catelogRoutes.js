@@ -3,8 +3,12 @@ const router = express.Router();
 const {
     getCatalog,
     createCatalog,
-    deleteCatalog
+    deleteCatalog,
+    getAllCatalogs
 } = require('../controllers/catelogController');
+
+// GET all catelogs in DB
+router.get('/', getAllCatalogs);
 
 // GET catalog by name
 router.get('/:catalogName', getCatalog);
