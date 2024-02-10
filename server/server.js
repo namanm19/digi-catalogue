@@ -7,8 +7,6 @@ const express = require("express");
 // creating an instance for mongoose
 const mongoose = require("mongoose");
 
-const cors = require('cors');
-
 // this line creates an express app and stored it in this constant
 // basically initializes the express
 const app = express();
