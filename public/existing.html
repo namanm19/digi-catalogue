@@ -17,31 +17,44 @@
       <div class="navbar">
         <img src="logo.png" alt="Digi Catalogue" class="logo" />
       </div>
-      <div><p class="heading">My catalogues</p></div>
-
       <div class="main-content">
-        <div class="row">
-          <div class="column">
-            <button
-              class="main-button"
-              onclick="window.location.href = 'catalogue1.html';"
-            >
-              Catalogue 1
-            </button>
-            <button class="main-button">Catalogue 2</button>
-            <button class="main-button">Catalogue 3</button>
-            <button class="main-button">Catalogue 4</button>
-            <button class="main-button">Catalogue 5</button>
-          </div>
-          <div class="column">
-            <button class="main-button">Catalogue 6</button>
-            <button class="main-button">Catalogue 7</button>
-            <button class="main-button">Catalogue 8</button>
-            <button class="main-button">Catalogue 9</button>
-            <button class="main-button">Catalogue 10</button>
-          </div>
-        </div>
+        <button class="main-button" id="catalogButton">
+          View existing catalogs
+        </button>
       </div>
+      <div id="catalogTiles"></div>
     </div>
+    <script>
+      document.getElementById("catalogButton").addEventListener("click", () => {
+        fetch("http://localhost:4000/api/catelogs/") // Replace with your actual server endpoint
+          .then((response) => response.json())
+          .then((data) => {
+            // Redirect to the product page with the selected catalog name
+            displayCatalogs(data);
+            // window.location.href = `product.html?catalog=${data.catalogName}`;
+          });
+      });
+
+      function displayCatalogs(catalogs) {
+        const catalogTilesContainer = document.getElementById("catalogTiles");
+        catalogTilesContainer.innerHTML = "";
+
+        catalogs.forEach((catalog) => {
+          const catalogTile = document.createElement("div");
+          catalogTile.classList.add("catalogTile");
+          catalogTile.innerHTML = `
+                    <h3 class="output">${catalog.catalogName}</h3>
+                                    `;
+
+          catalogTile.addEventListener("click", () => {
+            // Redirect to the product page with the selected catalog name
+            window.location.href = `product.html?catalog=${catalog.catalogName}`;
+            console.log(windows.location.href);
+          });
+
+          catalogTilesContainer.appendChild(catalogTile);
+        });
+      }
+    </script>
   </body>
 </html>

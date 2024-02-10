@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="products.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Catalog Products</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="navbar">
+        <a href="index.html">
+          <img src="logo.png" alt="Digi Catalogue" class="logo" />
+        </a>
+      </div>
+      <div class="main-content">
+        <h2 id="catalogTitle">Catalog Products</h2>
+        <div id="productTable"></div>
+      </div>
+    </div>
+    <script>
+      // Get catalog name from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const catalogName = urlParams.get("catalog");
+
+      // Set catalog title
+      document.getElementById(
+        "catalogTitle"
+      ).innerText = `${catalogName} Products`;
+
+      // Fetch data for the specified catalog
+      fetch(`http://localhost:4000/api/catelogs/${catalogName}`)
+        .then((response) => response.json())
+        .then((data) => displayProducts(data.products));
+
+      function displayProducts(products) {
+        const productTableContainer = document.getElementById("productTable");
+        const productTable = document.createElement("table");
+        productTable.classList.add("product-table");
+
+        // Create table header
+        const tableHeader = document.createElement("thead");
+        tableHeader.innerHTML = `
+          <tr>
+            <th>Product Name</th>
+            <th>Brand</th>
+            <th>ID</th>
+            <th>Product Image</th>
+          </tr>
+        `;
+        productTable.appendChild(tableHeader);
+
+        // Create table body
+        const tableBody = document.createElement("tbody");
+        products.forEach((product) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${product.productName}</td>
+            <td>${product.brand}</td>
+            <td>${product.id}</td>
+            <td><img src="${product.productImage}" alt="Image-here" /></td>
+          `;
+          tableBody.appendChild(row);
+        });
+
+        productTable.appendChild(tableBody);
+        productTableContainer.appendChild(productTable);
+      }
+    </script>
+  </body>
+</html>
