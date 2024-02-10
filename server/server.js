@@ -7,6 +7,8 @@ const express = require("express");
 // creating an instance for mongoose
 const mongoose = require("mongoose");
 
+const cors = require('cors');
+
 // this line creates an express app and stored it in this constant
 // basically initializes the express
 const app = express();
@@ -19,6 +21,7 @@ const PORT = process.env.PORT | 4000;
 // middle ware
 // this checks if the request from the client side has some body or data attached to it
 // if yes then that body/data is stored in req object
+app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
   console.log(req.path, req.method);
