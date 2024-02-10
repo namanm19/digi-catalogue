@@ -26,7 +26,7 @@
     </div>
     <script>
       document.getElementById("catalogButton").addEventListener("click", () => {
-        fetch("http://localhost:4000/api/catelogs/") // Replace with your actual server endpoint
+        fetch("https://digi-catalog.onrender.com/api/catelogs/") // Replace with your actual server endpoint
           .then((response) => response.json())
           .then((data) => {
             // Redirect to the product page with the selected catalog name
