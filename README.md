@@ -35,7 +35,7 @@ Digi Catalog App is a web application designed for ONDC BUILD FOR BHARAT by team
 
 ## Deployment
 
-The Digi Catalog App is deployed on Netlify.
+The Digi Catalog App is deployed on Render.
 
 Link: [Digi Catalog App](https://digi-catalog-app.onrender.com/)
 ## Server
